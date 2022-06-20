@@ -25,10 +25,10 @@ You will need the following things properly installed on your computer.
 
 ### Configure App to work with SCSS, and Bootstrap, and install Font Awesome
 
-`ember install ember-cli-sass bootstrap`
-`ember install @fortawesome/ember-fontawesome`
-`npm i --save-dev @fortawesome/free-brands-svg-icons`
-`npm i --save-dev @fortawesome/free-regular-svg-icons`
+* `ember install ember-cli-sass bootstrap`
+* `ember install @fortawesome/ember-fontawesome`
+* `npm i --save-dev @fortawesome/free-brands-svg-icons`
+* `npm i --save-dev @fortawesome/free-regular-svg-icons`
 
 * change `styles/app.css` to `styles/app.scss`
 * in `styles/app.scss` add the line `@import 'bootstrap';`
