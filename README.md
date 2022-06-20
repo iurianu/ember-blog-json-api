@@ -2,7 +2,6 @@
 
 > This README outlines the details of collaborating on this Ember application.
 > For this project, I used a JSON database provided by [Typicode](https://jsonplaceholder.typicode.com/), with two types of interpolating data: [Users](https://jsonplaceholder.typicode.com/users), and [Posts](https://jsonplaceholder.typicode.com/posts)
-> This version is an improved version of the blog app created after the youtube tutorial, which you can check on [Github](https://github.com/iurianu/ember-blog-rest-api), and on [Netlify](https://iurianu-ember-blog.netlify.app/)
 
 ## This Version
 
@@ -12,6 +11,7 @@
 ------------------
 
 > You can check this version online on [Github](https://github.com/iurianu/ember-blog-json-api), or deployed on [Netlify](https://ember-blog-json-api.netlify.app/)
+> This version is an improved version of the blog app created after the youtube tutorial, which you can check on [Github](https://github.com/iurianu/ember-blog-rest-api), and on [Netlify](https://iurianu-ember-blog.netlify.app/)
 
 ## Prerequisites
 
