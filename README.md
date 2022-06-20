@@ -30,6 +30,8 @@ You will need the following things properly installed on your computer.
 * `npm i --save-dev @fortawesome/free-brands-svg-icons`
 * `npm i --save-dev @fortawesome/free-regular-svg-icons`
 
+---------------
+
 * change `styles/app.css` to `styles/app.scss`
 * in `styles/app.scss` add the line `@import 'bootstrap';`
 * add the following lines to your `ember-cli-build.js` file
