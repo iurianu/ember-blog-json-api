@@ -1,0 +1,60 @@
+.blog {
+    @extend .w-100;
+    &.home-articles {
+        @extend .d-flex;
+        @extend .justify-content-between;
+        @extend .align-items-center;
+        @extend .flex-column;
+        @extend .align-items-md-stretch;
+        @extend .flex-md-row;
+        .card {
+            max-width: 95%;
+            flex: 0 0 95%;
+            @extend .mb-3;
+        }
+        @include media-min-768px {
+            .card {
+                flex: 0 0 48%;
+                max-width: 48%;
+            }
+        }
+        @include media-min-992px {
+            .card {
+                flex: 0 0 32.5%;
+                max-width: 32.5%;
+            }
+        }
+    }    
+}
+
+.card {
+    .card-body {
+        .card-title {
+            @extend .mb-2;
+            height: 1.5rem;
+            overflow-y: hidden;
+            a {
+                text-transform: capitalize;
+            }
+        }
+        .card-subtitle {
+            @extend .mb-3;
+        }
+        .card-text {
+            &.crop {
+                overflow: hidden;
+                white-space: pre;
+                text-overflow: ellipsis;
+                line-height: 2.5ex;
+                height: 5ex;
+            }
+        }
+    }
+}
+
+.pagination {
+    @extend .d-flex;
+    @extend .w-100;
+    @extend .justify-content-between;
+    @extend .py-5;
+}

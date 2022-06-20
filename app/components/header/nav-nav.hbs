@@ -1,0 +1,9 @@
+<nav class="col-2 col-md-6 menu d-flex justify-content-start justify-content-md-end align-items-center">
+    <div class="links" role="menu">
+        {{#each this.navs as |nav|}}
+        <LinkTo @route={{nav.route}} class="menu-about px-2" role="menu-item">
+            {{nav.title}}
+        </LinkTo>
+        {{/each}}
+    </div>
+</nav>

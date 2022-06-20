@@ -1,0 +1,11 @@
+@import './elements/hero';
+@import './elements/article';
+@import './templates/page';
+@import './templates/post';
+
+main {
+    min-height: $var-main-height;
+    overflow-x: hidden;
+    margin-bottom: $var-footer-height !important;
+    place-content: center;
+}

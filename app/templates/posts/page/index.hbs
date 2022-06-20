@@ -1,0 +1,40 @@
+{{page-title "Page"}}
+<HeroSection>
+
+    <h1 class="pt-3">EmberJS Blog</h1>
+
+    <section class="col-12 col-md-8 pt-3">
+        <h3 class="py-3">Software Versions</h3>
+        <ul id="software-versions">
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://nodejs.org/">node 14.17.0</a></li> 
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://nodejs.org/">npm 6.14.3</a></li>
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://cli.emberjs.com/release/">ember-cli 4.4.0</a></li>
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://getbootstrap.com/docs/5.1/getting-started/download/">bootstrap 5.1.3</a></li>
+        </ul>
+    </section>
+
+</HeroSection>
+
+<section class="container posts">
+
+    <div class="d-flex">
+        {{#each @model as |post|}}
+            <dl itemid={{post.id}}>
+                <dt style="font-weight:bold">Title:</dt>
+                    <dd style="font-style:italic;text-transform:capitalize"><strong>{{post.title}}</strong></dd>
+                <dt style="font-weight:bold">Content:</dt>
+                    <dd class="font-dancing">{{post.body}}</dd>
+                <dt>By:</dt>
+                <dd>{{post.user.name}} </dd>
+                <dt style="font-weight:bold">Link:</dt> 
+                    <dd><LinkTo @route="posts.show" @model={{post.id}}>See post page!</LinkTo></dd>
+            </dl>
+        {{/each}}        
+    </div>
+
+</section>
+{{outlet}}

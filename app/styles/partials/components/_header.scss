@@ -1,0 +1,29 @@
+header {
+    height: $var-header-height;
+    background-color: #e04e39; // Ember default color    
+    a {
+        color: #fff;
+        @extend .font-dancing;
+        @extend .fw-bold;
+        img {
+            max-width: 2rem;
+            height: auto;
+        }
+        &:hover, &:focus {
+            color: inherit;
+        }
+        &.menu-index {
+            &:hover, &:focus {
+                color: #fff;
+            }
+        }
+        figcaption {
+            p {
+                @extend .font-dancing;
+                @extend .fw-bold;
+                font-size: 1.8rem;
+                line-height: inherit;
+            }
+        }
+    }
+}

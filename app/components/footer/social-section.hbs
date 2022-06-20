@@ -1,0 +1,12 @@
+<ul class="col-sm-6 col-md-3 col-lg-2 d-flex justify-content-between mb-0">
+
+    {{#each this.socialItems as |item|}}
+        <li class="d-inline-block">
+            <a  target="_blank" itemprop="sameAs" title={{item.title}} href={{item.url}} 
+                data-bs-toggle="tooltip" data-bs-placement="top" rel="nofollow noopener noreferrer">
+                <FaIcon @icon={{item.icon}} @prefix="fab" />
+            </a>
+        </li>
+    {{/each}}     
+
+</ul>

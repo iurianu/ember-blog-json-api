@@ -1,0 +1,260 @@
+{{page-title "About"}}
+
+<HeroSection>
+
+    <h1>About the Blog-App</h1>
+    <h4>An app built with ember-data, and JsonAPI</h4>
+
+    <blockquote>
+        This is an improved version of the ember-data blog created previously, following the 
+        <a href="https://www.youtube.com/watch?v=ljLxZw-XStw" rel="tag nofollow noopener noreferrer" target="_blank">
+        Youtube Tutorial</a> created by <a href="https://www.youtube.com/c/ScottBatson" rel="tag nofollow noopener noreferrer" target="_blank">Scott Batson</a>.<br>
+        You can check the 
+        <a href="https://github.com/iurianu/ember-blog-rest-api" rel="tag nofollow noopener noreferrer" target="_blank">
+        Github  Repository</a> for the previous project, or see it live 
+        <a href="https://iurianu-ember-blog.netlify.app/" rel="tag nofollow noopener noreferrer" target="_blank">here</a>.
+    </blockquote>
+
+</HeroSection>
+
+<section class="container page-content">
+    <blockquote>
+        The database files are JSON endpoints provided by 
+        <a href="https://jsonplaceholder.typicode.com/" rel="tag nofollow noopener noreferrer" target="_blank">
+        Typicode</a>, with two types of interpolating data: 
+        <a href="https://jsonplaceholder.typicode.com/users" rel="tag nofollow noopener noreferrer" target="_blank">
+        Users</a>, and 
+        <a href="https://jsonplaceholder.typicode.com/posts" rel="tag nofollow noopener noreferrer" target="_blank">Posts</a>.
+    </blockquote>
+
+    <h2>Prerequisites</h2>
+    <p>You will need the following things properly installed on your computer:
+        <ul>
+            <li>
+                <a href="https://git-scm.com/" rel="tag nofollow noopener noreferrer" target="_blank">Git</a>
+            </li>            
+            <li>
+                <a href="https://nodejs.org/" rel="tag nofollow noopener noreferrer" target="_blank">Node.js</a> (with npm)
+            </li>
+            <li>
+                <a href="https://cli.emberjs.com/release/" rel="tag nofollow noopener noreferrer" target="_blank">Ember CLI</a>
+            </li>
+            <li>
+                <a href="https://google.com/chrome/" rel="tag nofollow noopener noreferrer" target="_blank">Google Chrome</a>
+            </li>
+        </ul>
+    </p>
+
+<h3>Installation</h3>
+
+<div class="accordion w-100" id="accordionOne">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne-One">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-One" aria-expanded="true" aria-controls="collapseOne-One">
+        Generate routes for static pages
+      </button>
+    </h2>
+    <div id="collapseOne-One" class="accordion-collapse collapse" aria-labelledby="headingOne-One" data-bs-parent="#accordionOne">
+      <div class="accordion-body">
+        <ul>
+            <li>
+                <code>ember g route index</code>
+            </li>            
+            <li>
+                <code>ember g route about</code>
+            </li>
+            <li>
+                <code>ember g route contact</code>
+            </li>
+        </ul>
+        <p class="font-dancing">The <code>g route</code> command also generates the template for the route in <code>app/templates</code></p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo-One">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo-One" aria-expanded="false" aria-controls="collapseTwo-One">
+        Configure App to work with SCSS, and Bootstrap, and install Font Awesome
+      </button>
+    </h2>
+    <div id="collapseTwo-One" class="accordion-collapse collapse" aria-labelledby="headingTwo-One" data-bs-parent="#accordionOne">
+        <div class="accordion-body">
+            <ol>
+                <li><code>ember install ember-cli-sass bootstrap</code></li>
+                <li><code>ember install @fortawesome/ember-fontawesome</code></li>
+                <li><code>npm i --save-dev @fortawesome/free-brands-svg-icons</code></li>
+                <li><code>npm i --save-dev @fortawesome/free-regular-svg-icons</code></li>      
+            </ol>
+            <br>
+            <ul>
+                <li>&rarr; I added <span class="font-dancing">Font Awesome</span>, to be able to use the Ember FA Components in Footer</li>
+                <li>&rarr; change <code>styles/app.css</code> to <code>styles/app.scss</code></li>
+                <li>&rarr; in <code>styles/app.scss</code> add the line <code>@import 'bootstrap';</code></li>
+                <li>&rarr; add the following lines to your <code>ember-cli-build.js</code> file:</li>                
+            </ul>
+<pre>
+<span class="comment">//    module.exports = function(defaults) {</span>
+<span class="comment">//        let app = new EmberApp(defaults, {</span>
+    <span class="module">module.exports</span> = <span class="vars">function</span>(defaults) {
+        <span class="vars">let</span> app = <span class="vars">new</span> <span class="module">EmberApp</span>(defaults, {
+        sassOptions: {
+            includePaths: [<span class="path">'node_modules/bootstrap/scss'</span>],
+        },
+    });
+    app.<span class="action">import</span>(<span class="path">'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'</span>);
+
+    <span class="return">return</span> app.<span class="action">toTree</span><span class="return">()</span>;
+<span class="comment">//</span>
+<span class="comment">//    return app.toTree();</span>
+</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+<h3>File Generation</h3>
+
+<div class="accordion" id="accordionTwo">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne-Two">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-Two" aria-expanded="true" aria-controls="collapseOne-Two">
+        Generate auxiliary components
+      </button>
+    </h2>
+    <div id="collapseOne-Two" class="accordion-collapse collapse" aria-labelledby="headingOne-Two" data-bs-parent="#accordionTwo">
+      <div class="accordion-body">
+        <ul>
+            <li><code>ember g component header</code></li>
+            <li><code>ember g component header/nav-brand</code></li>
+            <li><code>ember g component header/nav-nav</code></li>
+            <li><code>ember g component footer</code></li>
+            <li><code>ember g component footer/copy-section</code></li>
+            <li><code>ember g component footer/social-section</code></li>
+            <li><code>ember g component assets/scripts</code></li>
+        </ul>
+        <p class="font-dancing">In the <code>scripts</code> component we will add some javascript required for bootstrap's tooltips, and we'll use it on the <code>application.hbs</code> template, together with the <code>header</code>, and <code>footer</code> components:</p>
+<pre>
+<span>&lt;</span><span class="vars">script</span>>     
+    <span class="vars">var</span> tooltipTriggerList = [].<span class="action">slice</span>.<span class="action">call</span>(document.<span class="action">querySelectorAll</span>(<span class="path">'[data-bs-toggle="tooltip"]'</span>))
+    <span class="vars">var</span> tooltipList = tooltipTriggerList.<span class="action">map</span>(<span class="vars">function</span> (tooltipTriggerEl) {
+        <span class="return">return</span> <span class="vars">new</span> bootstrap.<span class="action">Tooltip</span>(tooltipTriggerEl)
+    })
+<span>&lt;/</span><span class="vars">script</span>>    
+</pre>        
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo-Two">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo-Two" aria-expanded="false" aria-controls="collapseTwo-Two">
+        Generate routes for posts, and users
+      </button>
+    </h2>
+    <div id="collapseTwo-Two" class="accordion-collapse collapse" aria-labelledby="headingTwo-Two" data-bs-parent="#accordionTwo">
+      <div class="accordion-body">
+        <ul>
+            <li><code>ember g route posts</code></li>
+            <li><code>ember g route posts/index</code></li>
+            <li><code>ember g route posts/user</code></li>
+            <li><code>ember g route posts/show</code></li>
+            <li><code>ember g route users</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree-Two">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree-Two" aria-expanded="false" aria-controls="collapseThree-Two">
+         Generate the models for post, and user
+      </button>
+    </h2>
+    <div id="collapseThree-Two" class="accordion-collapse collapse" aria-labelledby="headingThree-Two" data-bs-parent="#accordionTwo">
+      <div class="accordion-body">
+        <ul>
+            <li><code>ember g model post</code></li>
+            <li><code>ember g model user</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<blockquote class="py-3">
+    Now all our necessary components, templates, routes, and models are built!<br>
+    We will start the app with <code>ember s</code>, and it will load, and reload on <code>localhost:4200</code>
+</blockquote>
+
+<h3>Build the SCSS Structure</h3>
+
+<pre>
+[styles]
+    [partials]
+        [components]
+            [elements]
+                _hero.scss
+                _article.scss
+            [templates]
+                _page.scss
+                _post.scss
+            _footer.scss
+            _header.scss
+            _main.scss
+        [settings]
+            _default.scss
+            _fonts.scss
+            _resets.scss
+        _components.scss
+        _settings.scss
+    app.scss
+</pre>
+
+<h4>SCSS rules, and imports</h4>
+<fieldset>
+    <legend>app.scss</legend>
+<pre>
+<span class="return">@import</span> <span class="path">'bootstrap'</span>;
+
+<span class="return">@import</span> <span class="path">'./partials/settings'</span>;
+<span class="return">@import</span> <span class="path">'./partials/components'</span>;
+</pre>
+</fieldset>
+
+<fieldset>
+    <legend>./partials/_settings.scss</legend>
+<pre>
+<span class="return">@import</span> <span class="path">'./settings/fonts'</span>;
+<span class="return">@import</span> <span class="path">'./settings/resets'</span>;
+<span class="return">@import</span> <span class="path">'./settings/default'</span>;
+</pre>
+</fieldset>
+
+<fieldset>
+    <legend>./partials/_components.scss</legend>
+<pre>
+<span class="return">@import</span> <span class="path">'./components/header'</span>;
+<span class="return">@import</span> <span class="path">'./components/footer'</span>;
+<span class="return">@import</span> <span class="path">'.components/main'</span>;
+</pre>
+</fieldset>
+
+<fieldset>
+    <legend>./partials/components/_main.scss</legend>
+<pre>
+<span class="return">@import</span> <span class="path">'./elements/hero'</span>;
+<span class="return">@import</span> <span class="path">'./elements/article'</span>;
+<span class="return">@import</span> <span class="path">'./templates/page'</span>;
+<span class="return">@import</span> <span class="path">'./templates/post'</span>;
+</pre>
+</fieldset>
+
+<p class="font-dancing">The styles for the project are added separately in each of the above mentioned files, respecting the nomenclature, and the structure, and adding any partial files/declarations necessary, in order to keep a clean structure</p>
+
+<h3>Start building <em>header</em>, <em>main</em>, and <em>footer</em> components</h3>
+
+I like the footer to be fixed, so the header goes up on scroll, and the &lt;main&gt; is variable, taking its height after the length of the content, while having a min-height of <code>100vh - (header height + footer height)</code>.
+
+<h3>Start building the static pages</h3>
+
+
+
+</section>

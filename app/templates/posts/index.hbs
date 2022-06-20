@@ -1,0 +1,42 @@
+{{page-title "Index"}}
+<HeroSection>
+
+    <h1 class="pt-3">EmberJS Blog</h1>
+
+    <section class="col-12 col-md-8 pt-3">
+        <h3 class="py-3">Software Versions</h3>
+        <ul id="software-versions">
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://nodejs.org/">node 14.17.0</a></li> 
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://nodejs.org/">npm 6.14.3</a></li>
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://cli.emberjs.com/release/">ember-cli 4.4.0</a></li>
+            <li><a rel="tag nofollow noopener noreferrer" target="_blank" 
+                href="https://getbootstrap.com/docs/5.1/getting-started/download/">bootstrap 5.1.3</a></li>
+        </ul>
+    </section>
+
+</HeroSection>
+
+<section class="container posts">
+
+    <div class="d-flex">
+        {{#each @model as |post|}}
+        <article itemid='post-{{post.id}}' itemscope itemtype="http://schema.org/Article" class="post card">
+            <div class="card-body">
+                <h5 itemprop="name" class="card-title">
+                    <LinkTo @route="posts.show" @model={{post.id}}>{{post.title}}</LinkTo>
+                </h5>
+                <h6 itemprop="author" itemscope itemtype="http://schema.org/Person" class="card-subtitle">
+                    By: 
+                    <LinkTo @route="posts.user" @model={{post.user.id}}>{{post.user.username}}</LinkTo>&nbsp;
+                    <small style="font-weight: normal">({{post.user.name}})</small>            
+                </h6>
+                <p class="card-text crop">{{post.body}}</p>
+            </div>
+        </article>
+        {{/each}}
+    </div>
+</section>
+{{outlet}}

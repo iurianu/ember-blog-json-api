@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap);
+
+.font-lato {
+    font-family: 'Lato', 'Calibri', Arial, sans-serif;
+}
+
+.font-dancing {
+    font-family: 'Dancing Script', cursive;
+    font-size: 120%;
+    * {
+        font-size: 0.8em; 
+    }
+}

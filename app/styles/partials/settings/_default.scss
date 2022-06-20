@@ -1,0 +1,83 @@
+// Desktop-First Media Query Mixins
+
+@mixin media-max-420px {
+    @media (max-width: 419px)  { @content; }
+}
+
+@mixin media-max-576px {
+    @media (max-width: 575px)  { @content; }
+}
+
+@mixin media-max-768px {
+    @media (max-width: 767px)  { @content; }
+}
+
+@mixin media-max-992px {
+    @media (max-width: 991px)  { @content; }
+}
+
+@mixin media-max-1200px{
+    @media (max-width: 1199px) { @content; }
+}
+
+@mixin media-max-1400px{
+    @media (max-width: 1399px) { @content; }
+}
+
+// Mobile-First Media Query Mixins
+
+@mixin media-min-420px {
+    @media (min-width: 420px)  { @content; }
+}
+
+@mixin media-min-576px {
+    @media (min-width: 576px)  { @content; }
+}
+
+@mixin media-min-768px {
+    @media (min-width: 768px)  { @content; }
+}
+
+@mixin media-min-992px {
+    @media (min-width: 992px)  { @content; }
+}
+
+@mixin media-min-1200px {
+    @media (min-width: 1200px)  { @content; }
+}
+
+@mixin media-min-1400px {
+    @media (min-width: 1400px)  { @content; }
+}
+
+@mixin media-min-1800px {
+    @media (min-width: 1800px)  { @content; }
+}
+
+// Display-Mode Media Query Mixins
+
+@mixin media-portrait {
+    @media (orientation: portrait) { @content; }
+}
+
+@mixin media-landscape {
+    @media (orientation: landscape) { @content; }
+}
+
+@mixin media-dark {
+    @media (prefers-color-scheme: dark) { @content; }                   
+}
+
+@mixin media-light {
+    @media (prefers-color-scheme: light) { @content; }                   
+}
+
+@mixin reduced-motion {
+    @media (prefers-reduced-motion: reduce) { @content; }                       
+}
+
+// Variables
+
+$var-header-height: 50px;
+$var-footer-height: 35px;
+$var-main-height: calc(100vh - ($var-header-height + $var-footer-height));

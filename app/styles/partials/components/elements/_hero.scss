@@ -1,0 +1,51 @@
+%hero-image-width-fix  {  width: 200px; }
+%hero-image-height-fix { height: 200px; }
+
+.hero {
+    padding: 3rem;
+    background: #f6f6f6;
+    @extend .row;
+    @extend .m-0;
+    @extend .d-block;
+    .posts {
+        background: url(https://img.favpng.com/10/8/4/naver-blog-logo-computer-icons-png-favpng-r5dhUMpwRMCph4CeWm2SftXRx.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 0.5rem outset lightgrey;
+        @extend .position-relative;
+        @extend .float-end;
+        @extend %hero-image-height-fix;
+        @extend %hero-image-width-fix;
+    }
+    &:hover {
+        background-color: #f3f3f3;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
+    img {
+        @extend %hero-image-height-fix;
+        @extend .position-relative;
+        top: -25px;
+        right: -20px;
+    }
+    #software-versions {
+        @extend .d-flex;
+        @extend .justify-content-between;
+        li {
+            background-color: lightgrey;
+            @extend .py-1;
+            @extend .px-3;
+            border-radius: .25rem;
+        }
+    }
+    blockquote {
+        max-width: 60%;
+        @extend .mt-3;
+        @extend .font-dancing;
+        font-size: 1.2rem;
+        a {
+            font: inherit;
+        }
+    }
+}

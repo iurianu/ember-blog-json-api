@@ -1,0 +1,56 @@
+{{page-title "Users"}}
+
+<HeroSection>
+
+    <h1 class="pt-3">The Personnel</h1>
+
+    <section class="col-12 col-md-8 pt-3">
+        <h3 class="py-3">Our Authors</h3>
+    </section>
+
+</HeroSection>
+
+<section class="container authors">
+
+    {{#each @model as |user|}}
+        <article itemid='author-{{user.id}}' itemscope itemtype="http://schema.org/Person" class="d-flex">
+            <h2 itemprop="name" class="w-100">
+                <LinkTo @route="posts.user" @model={{user.id}}>
+                    <span itemprop="additionalName">{{user.username}}</span> 
+                    <small>(<span itemprop="name">{{user.name}}</span>)</small>
+                </LinkTo>
+            </h2> 
+            <section class="col-12 col-md-6">
+                <p>Website: 
+                    <a href='http://{{user.website}}' target="_blank" rel="tag nofollow noopener noreferrer" title={{user.name}}>
+                        {{user.website}}
+                    </a>
+                </p>
+                <p>Email: <a rel="tag" itemprop="email" href="mailto:{{user.email}}">{{user.email}}</a></p>
+                <p>Phone: <a rel="tag" itemprop="telephone" href='tel:{{user.phone}}'>{{user.phone}}</a></p>
+                <h3>Address:</h3>
+                <address>
+                    <p>
+                        <span itemprop="streetAddress">
+                            {{user.address.street}}, 
+                            {{user.address.suite}}
+                        </span><br>
+                       <span itemprop="addressLocality">
+                            {{user.address.city}}</span>, 
+                        <span itemprop="postalCode">
+                            {{user.address.zipcode}}
+                        </span>
+                    </p>
+                </address>
+            </section>
+
+            <dl class="col-12 col-md-6 d-flex flex-column justify-content-center" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">                
+                <dt>Company Name:       </dt>  <dd itemprop="name">{{user.company.name}}            </dd>
+                <dt>Company Slogan:     </dt>  <dd itemprop="slogan">{{user.company.catchPhrase}}   </dd>
+                <dt>Company Keywords:   </dt>  <dd itemprop="description">{{user.company.bs}}       </dd>
+            </dl>
+            
+        </article>
+    {{/each}}
+
+</section>

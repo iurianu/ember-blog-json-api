@@ -1,0 +1,23 @@
+main {
+    .page-content {
+        @extend .pt-5;
+    }
+    h3 {
+        @extend .d-block;
+        @extend .w-100;
+        @extend .my-3;
+    }
+    fieldset {
+        @extend .mb-3;
+        border: 1px solid lightgrey;
+        legend {
+            @extend .w-100;
+            background-color: bisque;
+            @extend .px-3;
+            @extend .pb-2;
+        }
+        pre {
+            @extend .px-3;
+        }
+    }
+}

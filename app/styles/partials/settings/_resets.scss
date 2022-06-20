@@ -1,0 +1,84 @@
+.clearbox {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+%fullwidth {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+* {
+    @extend .clearbox;
+    @extend .font-lato;
+}
+
+html, body {
+    @extend .clearbox;
+    @extend %fullwidth;
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+body.modal-open {
+    padding-right: 15px !important;
+}
+
+.d-flex {
+    flex-wrap: wrap;
+    margin: 0 -0.75rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+dl {
+    dd {
+        @extend .m-0;
+    }
+}
+
+.fa, .fab, .fal, .far, .fas {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    &[role='button'] {
+        @extend .me-3;
+        @extend .mt-3;
+        white-space: nowrap;
+    }
+}
+
+code {
+    font-size: .875em;
+    color: #d63384;
+    word-wrap: break-word;
+}
+
+pre {
+    color: darkslateblue;
+    .comment {
+        color: darkgreen;
+    }
+    .module {
+        color: lightseagreen;
+    }
+    .vars {
+        color: blue;
+    }
+    .action {
+        color: darkorange;
+    }
+    .path {
+        color: saddlebrown;
+    }
+    .return {
+        color: purple;
+    }
+}

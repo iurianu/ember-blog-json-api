@@ -1,0 +1,15 @@
+{{page-title "Show"}}
+    {{#each @model as |post|}}
+        <article itemid='post-{{post.id}}' itemscope itemtype="http://schema.org/Article">
+            <h2 itemprop="name">{{post.title}}</h2>
+            <h3 itemprop="author" itemscope itemtype="http://schema.org/Person">
+                By: 
+                {{post.user.username}} 
+                <small style="font-weight: normal">
+                    ({{post.user.name}})
+                </small>
+            </h3>
+            <blockquote itemprop="text">{{post.body}}</blockquote>
+        </article>
+    {{/each}}
+{{outlet}}
